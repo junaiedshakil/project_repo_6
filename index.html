@@ -12,6 +12,7 @@
       type="text/css"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
     <section>
@@ -59,7 +60,7 @@
     </section>
 
 
-    <section class="max-w-[1920px] bg-emerald-100">
+    <section class="max-w-[1920px] bg-emerald-100 h-auto">
         <div class="flex items-center">
             <div>
                 <img src="assets/hero-leaf1.png" alt="">
@@ -76,20 +77,41 @@
     </section>
 
 
-    <section>
-        <div>
-            <div>
+    <section class="max-w-[1620px] mx-auto grid grid-cols-5 gap-6 items-start justify-center m-7">
+  
+    <div id="all-tree" class="flex flex-col col-span-1">
+    </div>
 
-            </div>
-            <div>
 
-            </div>
-            <div>
-                
-            </div>
-        </div>
-    </section>
+    <div id="card-container" class="grid grid-cols-3 gap-4 col-span-3">
+    </div>
+
+  
+    <div id="add-cart" class="col-span-1">
+    <h1 class="font-bold mb-2">Your Cart</h1>
+   </div>
+   </section>
+
+  
+
+<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box"></div>
+    <h3 class="text-lg font-bold">Hello!</h3>
+    <p class="py-4">Press ESC key or click the button below to close</p>
+    <div class="modal-action">
+      <form method="dialog">
+        
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+  
+
+   
 
     <script src="index.js"></script>
+    
   </body>
 </html>
