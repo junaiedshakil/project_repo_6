@@ -29,7 +29,7 @@ const displayPlants = (plants) => {
       <h2 class="font-bold">${plant.name}</h2>
       
 
-      <p class="text-sm text-gray-600">${plant.description}</p>
+      <p class="text-sm text-gray-600 h-[120px]">${plant.description}</p>
       
       <div class="flex justify-between items-center mt-2">
        
@@ -44,37 +44,38 @@ const displayPlants = (plants) => {
         Add to Cart
       </button>
     `;
-
+  
     
     card.querySelector(".add-cart-btn").addEventListener("click", () => {
       addToCart(plant);
     });
 
     
-    card.querySelector(".category-btn").addEventListener("click", () => {
-      const modal = document.getElementById("my_modal_5");
-      const modalBox = modal.querySelector(".modal-box");
+  card.querySelector(".category-btn").addEventListener("click", () => {
+  const modal = document.getElementById("my_modal_5");
+  const modalContent = document.getElementById("modal-content");
 
-      
-      modalBox.innerHTML = `
-        <h3 class="text-lg font-bold">Category: ${plant.category}</h3>
-        <img src="${plant.image}" class="w-full h-40 object-cover rounded my-2">
-        <p class="py-2">This plant belongs to the <b>${plant.category}</b> category.</p>
+  modalContent.innerHTML = `
+    <h3 class="text-lg md:text-xl font-bold">Category: ${plant.category}</h3>
+    <img src="${plant.image}" 
+         class="w-full h-40 md:h-52 object-cover rounded my-2" 
+         alt="${plant.category}">
+    <p class="py-2 text-sm md:text-base">
+      This plant belongs to the <b>${plant.category}</b> category.
+    </p>
+    <p class="font-bold text-green-700 text-base md:text-lg flex items-center gap-1">
+      <i class="fa-solid fa-bangladeshi-taka-sign"></i>${plant.price}
+    </p>
+  `;
 
-        <div class="modal-action">
-          <form method="dialog">
-            <button class="btn">Close</button>
-          </form>
-        </div>
-      `;
+  modal.showModal();
+  
+});
+cardContainer.appendChild(card);
 
-      modal.showModal();
-    });
-
-    cardContainer.appendChild(card);
   }
-};
-
+}
+  
 
 
 const displayCategories = (plants) => {
@@ -173,7 +174,4 @@ const removeFromCart = (id) => {
   cart = cart.filter((item) => item.id !== id);
   displayCart();
 };
-
-
-
 
