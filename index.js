@@ -1,4 +1,4 @@
-let cart = [];
+
 
 const loadPlants = () => {
   fetch("https://openapi.programming-hero.com/api/plants")
@@ -14,7 +14,7 @@ loadPlants();
 const displayPlants = (plants) => {
   const cardContainer = document.getElementById("card-container");
 
-  cardContainer.innerHTML = `<span class="loading loading-spinner loading-xl"></span>`;
+  cardContainer.innerHTML = `<span class="loading loading-spinner loading-xl "></span>`;
 
   setTimeout(() => {
     cardContainer.innerHTML = "";
@@ -65,6 +65,8 @@ const displayPlants = (plants) => {
     }
   }, 500);
 };
+
+let cart = [];
 
 const displayCategories = (plants) => {
   const allTree = document.getElementById("all-tree");
